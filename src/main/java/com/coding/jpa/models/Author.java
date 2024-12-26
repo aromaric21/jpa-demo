@@ -13,14 +13,14 @@ public class Author {
 
     @Id
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "author_sequence"
+            strategy = GenerationType.TABLE,
+            generator = "author_id_gen"
     )
-    @SequenceGenerator(
+    /*@SequenceGenerator(
             name = "author_sequence",
             sequenceName = "author_sequence",
             allocationSize = 1
-    )
+    )*/
     private Integer id;
 
     private String firstName;
