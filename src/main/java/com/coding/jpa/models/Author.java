@@ -3,22 +3,17 @@ package com.coding.jpa.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-
-import java.time.LocalDateTime;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Author {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
-
+public class Author extends BaseEntity {
 
     private String firstName;
 

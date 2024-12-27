@@ -1,19 +1,18 @@
 package com.coding.jpa.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Resources {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "resource_type")
+public class Resources{
 
     @Id
     @GeneratedValue
@@ -24,4 +23,9 @@ public class Resources {
     private int size;
 
     private String url;
+
+    @OneToOne
+    @JoinColumn(name = "lecture_id")
+    private Lecture lecture;
+
 }
