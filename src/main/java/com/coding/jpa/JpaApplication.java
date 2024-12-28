@@ -38,6 +38,13 @@ public class JpaApplication {
 					.size(10)
 					.build();
 			videoRepository.save(video);*/
+
+			// Find by named query
+			repository.findByNamedQuery(70)
+					.forEach(System.out::println);
+
+			// Update with named query
+			repository.updateByNamedQuery(12);
 		};
 	}
 }
