@@ -17,7 +17,7 @@ public class JpaApplication {
 		SpringApplication.run(JpaApplication.class, args);
 	}
 
-	@Bean
+	//@Bean
 	public CommandLineRunner commandLineRunner(
 			AuthorRepository repository,
 			VideoRepository videoRepository
@@ -30,14 +30,14 @@ public class JpaApplication {
 					.age(34)
 					.email("conatact@aliboucoding.com")
 					.build();
-			repository.save(author); */
+			repository.save(author); /
 
 			var video = Video.builder()
 					.name("ABC")
 					.length(5)
 					.size(10)
 					.build();
-			videoRepository.save(video);
+			videoRepository.save(video);*/
 		};
 	}
 }
